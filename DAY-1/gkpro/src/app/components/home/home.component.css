@@ -1,0 +1,16 @@
+.card{
+    width:auto;
+    height: auto;
+    
+}
+.image{
+    width: 20%;
+    height: 40%;
+    mix-blend-mode: multiply;
+}
+.myfontcolor_class{
+    color:rgb(0, 102, 255)
+}
+.mybgcolor_class{
+    background-color:rgb(234, 134, 12)
+}

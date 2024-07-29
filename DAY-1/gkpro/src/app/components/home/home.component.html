@@ -1,0 +1,56 @@
+<p>home works!</p>
+<div>
+    {{myname}}
+
+</div>
+<div style="background-color: aqua;">
+ {{isAdmin? "YES":"NO"}}
+</div>
+<div>
+    {{getData()}}
+    <p>sum of {{a}} and {{b}} is  : {{a+b}}</p>
+</div>
+<div>
+    <mat-card class="card" appearance="outlined">
+        <mat-card-content>username is {{users.name}}</mat-card-content>
+        <mat-card-content>username is {{users.age}}</mat-card-content>
+        <mat-card-content>username is {{users.gender}}</mat-card-content>
+
+      </mat-card>
+</div>
+<div>
+    <img src = "assets/images/download.jpg" alt="no image">
+    <!-- image binding and property binding and with the attributes -->
+     <img class="image" [src]= "imageurl" alt = "no image" >
+
+
+</div>
+<div>
+    <button (click)="hello()">ALERT</button>
+</div>
+<div>
+    <input type="checkbox" [checked] = "policyAccepted"
+    (change)="policyAccepted = $any($event.target).checked"
+
+    />Accept the policy
+    <button [disabled]="!policyAccepted">Accept</button>
+    <button [disabled]="isAccepted">NEW BUTTON</button>
+</div>
+<div>
+    <input type="text" [value]="myusername"
+    #myuserna (keyup)="changeText(myuserna.value)"/>
+    
+    <h3>username is : {{myusername}}</h3>
+</div>
+
+<div>
+    <input type="text" [(ngModel)]=myusername/><br><br>
+    <h3>username is {{myusername}}</h3>
+
+    <h4 [style.color]="mycolor">Demo of Style Binding</h4>
+    <p [ngStyle]="{'color':demobind,'font-size':myfontsize}">Hello all</p>
+    <p [ngClass]="{'mybgcolor_class': mybg, 'myfontcolor_class': myfont}">this is demo BRO</p>
+
+
+</div>
+
