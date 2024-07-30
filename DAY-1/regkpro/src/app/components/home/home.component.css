@@ -10,16 +10,3 @@
     background-color: blue;
   }
   
-  /* Optionally, if you want to change the whole body background */
-  body.red {
-    background-color: red;
-  }
-  
-  body.green {
-    background-color: green;
-  }
-  
-  body.blue {
-    background-color: blue;
-  }
-  

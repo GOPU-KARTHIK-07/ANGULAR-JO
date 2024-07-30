@@ -1,0 +1,167 @@
+<p>home works!</p>
+<app-employee (msgevent)="receiveddata($event)">
+
+</app-employee>
+<h3>{{display}}</h3>
+
+@if(type == 1 ){
+    <div>
+        <h1>{{disp}}</h1>
+    </div>
+}
+@else {
+    <div>
+        <h1>
+            orini 
+        </h1>
+    </div>
+}
+
+
+@switch (type) {
+    @case (2) {
+        <div>
+            <h1>
+                are hoooo
+            </h1>
+        </div>
+
+    }
+    @default {
+        <div>
+            <h3>hey hey</h3>
+        </div>
+    }
+}
+
+<div *ngFor="let item of emp">
+    <h4>name is {{item.name}}</h4>
+    <h3>name is {{item.ph}}</h3>
+</div>
+
+<div>
+    <table>
+        <tr>
+          <th>name</th>
+          <th *ngFor="let e of students">{{e.name}}</th>
+        
+        </tr>
+        <tr>
+          <td>age</td>
+          <td *ngFor="let e of students">{{e.age}}</td>
+        </tr>
+        <tr>
+            <td>ph</td>
+            <td *ngFor="let e of students">{{e.ph}}</td>
+          </tr>
+      </table>
+</div>
+
+<table mat-table [dataSource]="students" class="mat-elevation-z8">
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Age Column -->
+    <ng-container matColumnDef="age">
+      <th mat-header-cell *matHeaderCellDef> Age </th>
+      <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+    </ng-container>
+  
+    <!-- Phone Number Column -->
+    <ng-container matColumnDef="ph">
+      <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+      <td mat-cell *matCellDef="let element"> {{element.ph}} </td>
+    </ng-container>
+  
+    <!-- Header Row -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <!-- Data Rows -->
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+<!-- we can give index to track or the partiucular thing to track -->
+ <ul>
+  @for(e of emp; track e.ph)
+  {   
+    
+       
+        <li>{{e.ph}}</li>
+        <li>{{e.name}}</li>
+    
+  }
+</ul>
+
+<ul>
+
+    @for(em of emp;track $index;let e=$even,od = $odd){
+        @if(e){
+            <li style="color: blue;">s1 number {{$index}} with name {{em.name}}</li>
+            
+
+        }
+        @if(od){
+            <li style="color: rgb(255, 0, 221);">s1 number {{$index}} with name {{em.ph}}</li>
+
+        }
+
+
+    }
+</ul>
+
+
+<table>
+ 
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Country</th>
+        </tr>
+    </thead>
+    @for(p of olympics; track p.country;) {
+    @if(p.country == "india"){
+    <tbody>
+        <tr style="color: black;background-color: orange;">
+            <td>{{$index}}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.country }}</td>
+        </tr>
+    </tbody>
+    }
+    @if(p.country == "ukraine"){
+    <tbody>
+        <tr style="color: black;background-color: yellow;">
+            <td>{{$index}}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.country }}</td>
+        </tr>
+    </tbody>
+    }
+ 
+    @if(p.country == "usa"){
+    <tbody>
+        <tr style="color: black;background-color: red;">
+            <td>{{$index}}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.age }}</td>
+            <td>{{ p.country }}</td>
+        </tr>
+    </tbody>
+    }
+ 
+    }
+</table>
+@for(em of emp; track $index){
+    <div>
+        <app-mydirective [name]="em.name" [phone]="em.phone">
+
+        </app-mydirective>
+
+    </div>
+}
+
