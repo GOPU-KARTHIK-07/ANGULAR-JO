@@ -1,0 +1,19 @@
+table {
+    border-collapse: collapse; /* Ensures borders don't overlap */
+  }
+ 
+  th, td {
+    border: 1px solid black; /* Sets a 1px black solid border for each cell */
+    padding: 5px; /* Adds some padding for better readability */
+  }
+ 
+  th {
+    background-color: #f2f2f2; /* Optional: Set a background color for headers */
+  }
+  .fahrenheit {
+    background-color: lightblue;
+  }
+  
+  .celsius {
+    background-color: lightcoral;
+  }

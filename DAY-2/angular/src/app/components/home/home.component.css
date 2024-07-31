@@ -1,0 +1,40 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  
+  .main-content {
+    display: flex;
+    flex: 1;
+    margin-top: 60px; /* Adjust this based on the height of your header */
+  }
+  
+  app-menu {
+    position: fixed;
+    top: 60px; /* Adjust this based on the height of your header */
+    width: 25%;
+    height: calc(100vh - 120px); /* Adjust based on header and footer height */
+    overflow-y: auto;
+    z-index: 500;
+  }
+  
+  .content {
+    margin-left: 25%;
+    padding: 20px;
+    width: 75%;
+  }
+  
+  app-footer {
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  

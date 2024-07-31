@@ -165,3 +165,69 @@
     </div>
 }
 
+<h3> {{myvlaue | currency : 'INR'}} </h3>
+<h2>{{myvlaue | number: '1.0-0'}}</h2>
+<!--will output '4'-->
+
+<h1>{{myvlaue| number:'1.1-2'}}</h1>
+<!--will output '-4'-->
+
+<h3>{{result | lowercase}}</h3>
+<h3>{{result | uppercase}}</h3>
+<h3>{{result | titlecase}}</h3>
+<h3>{{result | slice : 2:5}}</h3>
+ 
+<h3>{{emp | json}}</h3>
+ 
+<h3>{{myvlaue | currency}}</h3>
+<h3>{{myvlaue | currency : 'INR'}}</h3>
+<h3>{{myvlaue | currency : 'USD '}}</h3>
+<h3>{{mydate }}</h3>
+<h3>{{mydate | date : 'shortDate' }}</h3>
+<h3>{{mydate | date : 'longDate'}}</h3>
+<h3>{{mydate | date:'MM-dd-yyyy'}}</h3>
+<h3>{{mydate  | date : 'fullDate'}}</h3>
+
+
+<h3>{{myname | mycustompipe}}</h3>
+<ul>
+    @for(e of degrees; track $index)
+    {   
+      
+         
+          <li>{{e.value | number  : '1.1-2'}}</li> 
+          <li>{{e.unit}}</li>
+      
+    }
+  </ul>
+
+  <table border="1" style="width: 50%; margin: auto; text-align: center;">
+    <thead>
+      <tr>
+        <th>Original Value</th>
+        <th>Converted Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of degrees">
+        <td>{{ e.value | number:'1.2-2' }} {{ e.unit }}</td>
+        <td [ngClass]="{'fahrenheit': isFahrenheit(e.unit), 'celsius': !isFahrenheit(e.unit)}">
+          {{ e.value | tempipe:e.unit }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+  <mat-form-field>
+    <mat-label>Message</mat-label>
+    <input matInput value="Disco party!" #message>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>Action</mat-label>
+    <input matInput value="Dance" #action>
+  </mat-form-field>
+  
+  <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+  
