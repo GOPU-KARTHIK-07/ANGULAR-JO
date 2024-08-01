@@ -1,0 +1,19 @@
+<h1>App Component</h1>
+<table border="1">
+  <tr>
+    <td><a routerLink="home" routerLinkActive="avtive">HOME</a></td>
+    <td><a routerLink="aboutus"  routerLinkActive="avtive">ABOUT US</a></td>
+    <td><a routerLink="contactus"routerLinkActive="avtive">CONTACT US</a></td>
+    <td><a routerLink="careers"routerLinkActive="avtive">CAREERS</a></td>
+    <td><a routerLink="login"routerLinkActive="avtive">login</a></td>
+    <td><a [routerLink]="[{ outlets: { helpoutlet: ['help'] } }]"routerLinkActive="avtive">HELP</a></td>
+  </tr>
+</table>
+
+<div style="background-color: aqua;">
+  <router-outlet></router-outlet>
+</div>
+
+<div style="background-color: rgb(102, 255, 0);">
+  <router-outlet name="helpoutlet"></router-outlet>
+</div>

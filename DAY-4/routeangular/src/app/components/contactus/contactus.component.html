@@ -1,0 +1,16 @@
+<p>contactus works!</p>
+<div>
+    <h1>Registered Users</h1>
+    <ul>
+        @for( user of users;track $index){
+            <li>
+               
+                <p>Name: {{ user.name }}</p>
+                <p>Age: {{ user.age }}</p>
+                <p>Message: {{ user.message }}</p>
+              </li>
+            
+        }
+      
+    </ul>
+  </div>

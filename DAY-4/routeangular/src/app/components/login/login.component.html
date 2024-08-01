@@ -1,0 +1,35 @@
+<p>login works!</p>
+
+<table>
+    <tr>
+        <td>username</td>
+        <td>
+         <input type="text" #txtusername>
+        </td>
+    </tr>
+    <tr>
+        <td>password</td>
+        <td>
+            <input type="text" #userPassword>
+        </td>
+    </tr>
+    <tr>
+        <td>name</td>
+        <td>
+            <input type="text" #name>
+        </td>
+    </tr> 
+    <tr>
+        <td>age</td>
+        <td>
+            <input type="text" #userage>
+        </td>
+    </tr>
+    <tr>
+        <td>message</td>
+        <td>
+            <input type="text" #usermessage>
+        </td>
+    </tr>
+    <button (click)="myLogin(txtusername.value,userPassword.value,name.value,userage.value,usermessage.value)">LOGIN || SEND</button>
+</table>
