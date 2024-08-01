@@ -201,7 +201,7 @@
     }
   </ul>
 
-  <table border="1" style="width: 50%; margin: auto; text-align: center;">
+  <table border="2" style="width: 50%; margin: auto; text-align: left;">
     <thead>
       <tr>
         <th>Original Value</th>
@@ -229,5 +229,83 @@
     <input matInput value="Dance" #action>
   </mat-form-field>
   
-  <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button>
+  <!-- <button mat-stroked-button (click)="openSnackBar(message.value, action.value)">Show snack-bar</button> -->
+
+  <div class="cards-container">
+    <div class="card" *ngFor="let card of cards">
+      <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
+        <ng-template pTemplate="header">
+          <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+        </ng-template>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
+        </p>
+        <ng-template pTemplate="footer">
+          <div class="flex gap-3 mt-1">
+            <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full"></p-button>
+            <p-button label="Save" class="w-full" styleClass="w-full"></p-button>
+          </div>
+        </ng-template>
+      </p-card>
+    </div>
+  </div>
+
+  <div>
+    <!-- <div>
+        <button (click)="getMessage()" mat-button>Send Message</button>
+      </div>
+      <div>
+        <p>{{ dat }}</p>
+      </div>
+  </div> -->
+  <!-- <div>
+    <h3>enter the text value</h3>
+    <input type="text" #txtnumb placeholder="Enter a number">
+    <button (click) = "addNumbers(txtnumb.value)">add</button>
+    <ul>
+        <li *ngFor="let num of myar">{{ num }}</li>
+      </ul>
+    
+  </div>
+  <div>
+    <h3>Number List</h3>
+    <ul>
+      <li *ngFor="let num of myar">
+        {{ num }}
+        <button (click)="deleteNumber(num)">Delete</button>
+      </li>
+    </ul>
+  </div>
+   -->
+   <div>
+    <h3>Login</h3>
+    <mat-form-field appearance="fill">
+      <mat-label>Username</mat-label>
+      <input matInput [(ngModel)]="username" placeholder="Username">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="password" type="password" placeholder="Password">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="isLoggedIn">Login</button>
+    <button mat-raised-button color="warn" (click)="logout()" [disabled]="!isLoggedIn">Logout</button>
+  </div>
+  
+  <div *ngIf="isLoggedIn" class="card flex justify-content-center">
+    <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
+      <ng-template pTemplate="header">
+        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
+      </ng-template>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque
+        quas!
+      </p>
+      <ng-template pTemplate="footer">
+        <div class="flex gap-3 mt-1">
+          <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full"></p-button>
+          <p-button label="Save" class="w-full" styleClass="w-full"></p-button>
+        </div>
+      </ng-template>
+    </p-card>
+  </div>
   

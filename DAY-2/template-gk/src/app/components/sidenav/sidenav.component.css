@@ -1,0 +1,44 @@
+/* General Styling for the Navigation */
+nav {
+    background-color: #495057; /* Slightly lighter shade for a modern look */
+    color: #ffffff; /* Keep text white for contrast */
+    height: 87%; /* Maintain height */
+    padding: 20px; /* Maintain padding */
+     margin-top: 10px; /*Maintain margin */
+    width: 50%; /* Maintain width */
+    border-radius: 8px; /* Rounded corners for a modern feel */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Flexbox for better alignment */
+    flex-direction: column; /* Vertical layout */
+  }
+  
+  /* List Styling */
+  nav ul {
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow the list to grow and fill the nav */
+  }
+  
+  /* List Item Styling */
+  nav ul li {
+    margin: 10px 0; /* Maintain margin */
+    font-size: 1.1em; /* Slightly larger font for better readability */
+  }
+  
+  /* Link Styling */
+  nav ul li a {
+    color: #ffffff; /* Keep link color white */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Add padding for better click area */
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover Effect for Links */
+  nav ul li a:hover {
+    text-decoration: none; /* Keep no underline on hover */
+    background-color: #6c757d; /* Subtle background change on hover */
+    color: #f8f9fa; /* Slightly lighter text on hover for better contrast */
+  }
+  

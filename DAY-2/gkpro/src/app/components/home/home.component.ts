@@ -10,18 +10,24 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 import { InputModalityDetector } from '@angular/cdk/a11y';
 import { MydirectiveComponent } from '../mydirective/mydirective.component';
 import { MycustompipePipe } from '../../mycustompipe.pipe';
+import { CardModule } from 'primeng/card'
 import { TempipePipe } from '../../tempipe.pipe';
+import { ButtonModule } from 'primeng/button';
+import { MessengerService } from '../../messenger.service';
+import { FormsModule } from '@angular/forms';
+import { LogInOutService } from '../../log-in-out.service';
 
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [EmployeeComponent,CommonModule,MatButtonModule,MatFormFieldModule,MatInputModule,MatTableModule,MydirectiveComponent,
-    MycustompipePipe,TempipePipe],
+    MycustompipePipe,TempipePipe,CardModule,ButtonModule,FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  cards = Array(10).fill(0);
   display:string = ""
   receiveddata(data:string){
       this.display = data
@@ -75,11 +81,54 @@ export class HomeComponent {
     // Return true if the unit is C because it will be converted to F
     return unit === 'C';
   }
-  constructor(private _snackBar: MatSnackBar) {}
+  // constructor(private _snackBar: MatSnackBar) {}
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action);
   }
+  dat: string = '';
+ myar:number[] = []
+  constructor(private msgSer: MessengerService,private logInOutService: LogInOutService,private _snackBar: MatSnackBar) {
+    this.myar = this.msgSer.getList()
+    this.isLoggedIn = this.logInOutService.getLoginStatus();
+    this.isLoggedIn = this.logInOutService.getLoginStatus();
+  }
+
+  getMessage() {
+    this.dat = this.msgSer.getMessage();
+  }
+
+  addNumbers(num:string){
+    var res : number = parseInt(num)
+    this.msgSer.addNum(res)
+    this.myar = this.msgSer.getList()
+  }
+  deleteNumber(num: number) {
+    this.msgSer.deleteNum(num);
+    this.myar = this.msgSer.getList();
+  }
+
+  username = '';
+  password = '';
+  isLoggedIn = false;
+
+  // constructor(private logInOutService: LogInOutService) {
+   
   
+
+  login() {
+    if (this.logInOutService.login(this.username, this.password)) {
+      this.isLoggedIn = true;
+    } else {
+      alert('Invalid credentials');
+    }
+  }
+
+  logout() {
+    this.logInOutService.logout();
+    this.isLoggedIn = false;
+  }
 }
+  
+
 
