@@ -14,11 +14,13 @@ import { CommonModule } from '@angular/common';
 export class HomeComponent {
   users:any[] = [];
   constructor(private userService:UserService){}
-  ngOnInit():void{
-    this.userService.getUser().subscribe((data)=>{
-      this.users =  data;
+  ngOnInit(): void {
+    this.userService.getUser().subscribe((data) => {
+      console.log('Received data:', data); // Log the received data
+      this.users = data;
+    }, error => {
+      console.error('Error fetching users:', error); // Log any errors
     });
   }
-
 
 }

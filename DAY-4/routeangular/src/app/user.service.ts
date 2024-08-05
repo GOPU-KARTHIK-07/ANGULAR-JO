@@ -12,7 +12,7 @@ interface User{
   providedIn: 'root'
 })
 export class UserService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/users'
+  private apiUrl = 'http://localhost:5000/users'
 
   constructor(private http:HttpClient) { }
   getUser():Observable<User[]>{

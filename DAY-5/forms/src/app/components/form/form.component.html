@@ -1,0 +1,38 @@
+<p>form works!</p>
+ 
+ 
+<div>
+    <form #regData = "ngForm" (ngSubmit) = 'register(regData)'>
+ 
+        <div>Firstname : <input type="text" placeholder="Enter firstname"
+            required name="fname" ngModel #myFname="ngModel">
+            <span style="color: red" *ngIf = "myFname.touched && !myFname.valid">Firstname required</span>
+        </div>
+        <div>Lastname : <input type="text" placeholder="Enter lastname"
+            required name="lname" ngModel #myLname="ngModel">
+            <span style="color: red" *ngIf =  "myLname.touched && !myLname.valid">Lastname required</span>
+        </div>
+        <div>
+            <div>
+                Email:
+                <input type="email" placeholder="Enter email" required name="email" ngModel #myEmail="ngModel">
+                <span style="color: red" *ngIf="myEmail.touched && !myEmail.valid">Email required</span>
+            </div>
+           
+            <div>
+                Phone :
+                <input type="number" placeholder="Enter phone" required name="phone" ngModel #myPhone = "ngModel">
+            <span style="color: red" *ngIf="myPhone.touched && !myPhone.valid">Phone Required</span></div>
+            <div><input type="submit"  value="register" [disabled]="regData.invalid"></div>
+        </div>
+    </form>
+</div>
+ 
+ 
+<div class="card flex justify-content-center">
+    <p-dropdown
+        [options]="cities"
+        [(ngModel)]="selectedCity"
+        optionLabel="name"
+        placeholder="Select a City" />
+</div>

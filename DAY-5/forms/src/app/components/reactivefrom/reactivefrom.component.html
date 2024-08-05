@@ -1,0 +1,13 @@
+<p>reactivefrom works!</p>
+<div>
+    <form [formGroup]="regForm" (ngSubmit)="register (regForm)">
+        <div>
+            First Name :
+            <input type="text" placeholder="Enter first name" formControlName="fname">
+            <span style="color: red" *ngIf="regForm.controls['fname'].touched && regForm.controls['fname'].invalid">
+                <span style="color: rgb(255, 0, 0)" *ngIf= "regForm.controls['fname'].hasError('required')">Enter First Name</span>
+                <span style="color: red" *ngIf= "regForm.controls['fname'].hasError('minlength')"></span>
+            </span>
+        </div>
+    </form>
+</div>
