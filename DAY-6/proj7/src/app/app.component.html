@@ -1,0 +1,12 @@
+<h1>app compo</h1>
+<app-home></app-home>
+<app-child></app-child>
+<app-state></app-state>
+<div>
+  <button (click)="toggle()">Toggle</button>
+  <div *ngIf="isShown" @fadeout>this is a simple animation </div>
+</div>
+<div>
+  <button (click)="togglezoom()">Toggle</button>
+  <div *ngIf="isFocused" @zoomFade>this is a simple animation</div>
+</div>
