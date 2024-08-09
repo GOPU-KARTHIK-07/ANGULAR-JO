@@ -1,0 +1,6 @@
+<button (click)="playing()">suuper</button>
+<app-home></app-home>
+<app-footer></app-footer>
+<div *ngFor = "let mark of marks">
+ <h3 [style.color]="(mark|grade).color">{{(mark|grade).grade}}</h3>
+</div>
